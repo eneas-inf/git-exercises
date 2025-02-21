@@ -1,0 +1,5 @@
+Commits eines bestimmten Autors filtern
+> git log --author="Max Mustermann"
+
+Kompakte Commit-Übersicht mit One-Liner-Format
+> git log --oneline --graph --decorate --all

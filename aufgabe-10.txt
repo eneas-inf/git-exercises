@@ -1,0 +1,30 @@
+1. Löschen Sie zwei Dateien: Einmal mit rm und einmal mit git rm. Was fällt Ihnen in der
+Ausgabe von git status auf?
+
+```
+> rm .\foo.txt
+> git rm .\bar.txt
+> git status --short
+D  bar.txt
+ D foo.txt
+```
+
+Das "D" bei bar.txt ist grün aber bei foo.txt rot.
+
+2. Machen Sie nun beide Änderungen wieder rückgängig. Welche Befehle müssen Sie
+verwenden, um den Ursprungszustand wiederherstellen zu können?
+
+Ich konnte beides mit 'git checkout .\file.txt' wieder herstellen.
+
+3. Benennen Sie nun zwei Dateien um: Einmal mit mv und einmal mit git mv. Welche
+Variante ist vorzuziehen, und warum?
+
+> mv .\bar.txt .\baar.txt
+> git mv .\foo.txt .\fooo.txt
+> git status --short
+ D bar.txt
+R  foo.txt -> fooo.txt
+?? aufgabe-10.txt
+?? baar.txt
+
+Man kann sehen, dass git verstanden hat, dass foo.txt in fooo.txt umbenennt wurden, aber es denkt dass bar.txt gelöscht wurde und baar.txt erstellt wurde.
